@@ -1,0 +1,10 @@
+[build]
+  functions = "functions"
+  command = "npm run build"
+
+[dev]
+  # we can add our build to the "command" option here, so lets add webpack for imports
+
+  port = 3000 # Port that the dev server will be listening on
+  functionsPort = 34567 # port for functions server
+
