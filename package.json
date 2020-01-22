@@ -1,0 +1,31 @@
+{
+  "name": "sdm-rebuild-poc-graphql",
+  "version": "0.1.0",
+  "description": "a poc for graphql api on netlify",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd functions && npm install && cd .. && webpack --config webpack.config.js",
+    "dev": "webpack --config webpack.config.js && netlify dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.lblw.ca/gold/sdm-rebuild-poc-graphql.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.5",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.10"
+  }
+}
