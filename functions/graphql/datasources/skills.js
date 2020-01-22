@@ -1,8 +1,4 @@
 class SkillsAPI {
-  constructor() {
-    super();
-  }
-
   getSkills() {
     return {
       frontEnd: [
