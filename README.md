@@ -12,6 +12,8 @@ This repo exists to show a basic setup for a graphql lambda running on netlify.
 
 ### Installation
 
+(Some prerequisites of this walkthrough/repo are having a netlify account and [netlify cli](https://docs.netlify.com/cli/get-started/#installation) installed)
+
 Clone this repo
 
 ```sh
@@ -27,7 +29,33 @@ Any javascript file that lives at the root of the "functions" folder will be exp
 
 At the root of the project
 
+`npm run build`
 `npm run dev`
 
 What this is really doing is bundling the graphql code with webpack and then invoking `netlify dev` which creates an environment thats as close to the netlify (AWS) lambda environment as possible, but with some pit falls.
 [Netlify Dev Docs](https://github.com/netlify/cli/blob/master/docs/netlify-dev.md)
+
+### Deploying
+
+Depending on how you want to deploy it will consist of a few steps.
+
+`netlify login`
+
+Then you will initialize your repo as a netlify site (Note: you want to select Create & configure a new site)
+
+`netlify init`
+
+you will be walked through a project initialization, follow it. Then if you hooked up a github repo you will have a deploy hook that deploys your site each time you push a commit. Alternatively you can delpoy previews with:
+
+`netlify deploy`
+
+This will run the "[build]" step in our netlify.toml and deploy to a hashed testing site.
+To deploy to production manually you can do:
+
+`netlify deploy -p`
+
+However when deploying this way you'll need to npm install in the functions folder first as it will zip up your depenedancies along with your code.
+
+### Closing
+
+You can remove the webpack from this project, its not really needed and adds awkward complexity, I just added it as a proof of concept to show that with netlify functions we can have a decent build step. There also wasn't any straightforward documentation on graphql lambda's in netlify so here you go, have fun! 🚀
