@@ -32,6 +32,8 @@ At the root of the project
 `npm run build`
 `npm run dev`
 
+Your graphql function should be available on `http://localhost:34567/.netlify/functions/graphql` when testing this way, you will see graphiql
+
 What this is really doing is bundling the graphql code with webpack and then invoking `netlify dev` which creates an environment thats as close to the netlify (AWS) lambda environment as possible, but with some pit falls.
 [Netlify Dev Docs](https://github.com/netlify/cli/blob/master/docs/netlify-dev.md)
 
