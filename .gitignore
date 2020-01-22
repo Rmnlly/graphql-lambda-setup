@@ -2,5 +2,8 @@
 
 node_modules
 
+#ignore bundled graphql file
+/functions/graphql.js
+
 # Local Netlify folder
 .netlify
