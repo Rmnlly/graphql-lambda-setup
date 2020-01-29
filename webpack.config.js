@@ -1,8 +1,6 @@
 const nodeExternals = require("webpack-node-externals");
 const path = require("path");
 
-//We're not using webpack currently, this is an example build file
-
 module.exports = {
   optimization: { minimize: false },
   entry: "./functions/graphql/index.js",
